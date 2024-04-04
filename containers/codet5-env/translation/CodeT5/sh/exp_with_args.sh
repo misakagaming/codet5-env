@@ -31,9 +31,9 @@ fi
 
 
 if [[ ${SUB_TASK} == none ]]; then
-  OUTPUT_DIR=saved_models
+  OUTPUT_DIR=${WORKDIR}/saved_models
 else
-  OUTPUT_DIR=saved_models/${SUB_TASK}
+  OUTPUT_DIR=${WORKDIR}/saved_models/${SUB_TASK}
 fi
 
 CACHE_DIR=${OUTPUT_DIR}/cache_data
@@ -42,6 +42,7 @@ LOG=${OUTPUT_DIR}/train.log
 mkdir -p ${OUTPUT_DIR}
 mkdir -p ${CACHE_DIR}
 mkdir -p ${RES_DIR}
+touch ${LOG}
 
 if [[ $MODEL_TAG == roberta ]]; then
   MODEL_TYPE=roberta
@@ -78,8 +79,8 @@ elif [[ ${TASK} == 'clone' ]]; then
 elif [[ ${TASK} == 'defect' ]] && [[ ${MODEL_TYPE} == 'roberta' ||  ${MODEL_TYPE} == 'bart' ]]; then
   RUN_FN=${WORKDIR}/run_defect.py
 else
-  #RUN_FN=${WORKDIR}/run_gen.py
-  RUN_FN=run_gen.py
+  RUN_FN=${WORKDIR}/run_gen.py
+  #RUN_FN=run_gen.py
 fi
 
 CUDA_VISIBLE_DEVICES=${GPU} \
