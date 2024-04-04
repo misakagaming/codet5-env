@@ -82,7 +82,7 @@ else
   #RUN_FN=${WORKDIR}/run_gen.py
   RUN_FN=CodeT5/run_gen.py
 fi
-
+cd "/"
 CUDA_VISIBLE_DEVICES=${GPU} \
   python ${RUN_FN}  ${MULTI_TASK_AUG}   \
   --do_train --do_eval --do_eval_bleu --do_test  \
