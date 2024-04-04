@@ -1,6 +1,6 @@
 WORKDIR="/"
 export PYTHONPATH=$WORKDIR
-
+cd "/CodeT5"
 TASK=${1}
 SUB_TASK=${2}
 MODEL_TAG=${3}
@@ -80,9 +80,9 @@ elif [[ ${TASK} == 'defect' ]] && [[ ${MODEL_TYPE} == 'roberta' ||  ${MODEL_TYPE
   RUN_FN=${WORKDIR}/run_defect.py
 else
   #RUN_FN=${WORKDIR}/run_gen.py
-  RUN_FN=CodeT5/run_gen.py
+  RUN_FN=run_gen.py
 fi
-cd "/"
+
 CUDA_VISIBLE_DEVICES=${GPU} \
   python ${RUN_FN}  ${MULTI_TASK_AUG}   \
   --do_train --do_eval --do_eval_bleu --do_test  \
