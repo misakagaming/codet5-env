@@ -1,6 +1,5 @@
-WORKDIR="/"
+WORKDIR="/CodeT5"
 export PYTHONPATH=$WORKDIR
-cd "/CodeT5"
 TASK=${1}
 SUB_TASK=${2}
 MODEL_TAG=${3}
