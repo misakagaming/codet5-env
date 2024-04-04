@@ -1,4 +1,4 @@
-WORKDIR="lol"
+WORKDIR="CodeT5"
 export PYTHONPATH=$WORKDIR
 
 TASK=${1}
@@ -79,7 +79,8 @@ elif [[ ${TASK} == 'clone' ]]; then
 elif [[ ${TASK} == 'defect' ]] && [[ ${MODEL_TYPE} == 'roberta' ||  ${MODEL_TYPE} == 'bart' ]]; then
   RUN_FN=${WORKDIR}/run_defect.py
 else
-  RUN_FN=${WORKDIR}/run_gen.py
+  #RUN_FN=${WORKDIR}/run_gen.py
+  RUN_FN=CodeT5/run_gen.py
 fi
 
 CUDA_VISIBLE_DEVICES=${GPU} \
