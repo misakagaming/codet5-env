@@ -69,7 +69,7 @@ elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_PATH=Salesforce/codet5-large
 fi
 
-
+cd "/"
 if [[ ${TASK} == 'multi_task' ]]; then
   RUN_FN=${WORKDIR}/run_multi_gen.py
   MULTI_TASK_AUG='--max_steps '${16}' --save_steps '${17}' --log_steps '${18}
