@@ -32,9 +32,9 @@ fi
 
 
 if [[ ${SUB_TASK} == none ]]; then
-  OUTPUT_DIR=${MODEL_DIR}/${TASK}/${FULL_MODEL_TAG}
+  OUTPUT_DIR=saved_models
 else
-  OUTPUT_DIR=${MODEL_DIR}/${TASK}/${SUB_TASK}/${FULL_MODEL_TAG}
+  OUTPUT_DIR=saved_models/${SUB_TASK}
 fi
 
 CACHE_DIR=${OUTPUT_DIR}/cache_data
