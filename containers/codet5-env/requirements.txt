@@ -1,9 +1,6 @@
 torch
 torchvision
-transformers
-tree_sitter
-numpy
-pandas
-scipy>=0.15.1
-scikit-learn>=0.18
-tensorboard
+torchaudio
+transformers>=4.6.1
+tree_sitter>=0.2.2
+tensorboard>=2.4.1
