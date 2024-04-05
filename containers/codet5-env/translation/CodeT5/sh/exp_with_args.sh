@@ -43,6 +43,7 @@ mkdir -p ${OUTPUT_DIR}
 mkdir -p ${CACHE_DIR}
 mkdir -p ${RES_DIR}
 touch ${LOG}
+touch ${RES_FN}
 
 if [[ $MODEL_TAG == roberta ]]; then
   MODEL_TYPE=roberta
