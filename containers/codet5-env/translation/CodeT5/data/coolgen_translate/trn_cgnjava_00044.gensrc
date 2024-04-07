@@ -1,0 +1,15 @@
++->IF exp_error iyy1_component return_code = 1
+!
+!  +->CASE OF imp_command iyy1_component send_command
+!  +> CASE "INIT"
+!  !
+!  !  NOTE:
+!  !  ****************************************************************
+!  !  Things to be done when the Server is initially called.
+!  !
+!  !  NOTE:
+!  !  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  !  Encode the things to be done when the Server is initially called.
+!  !
+!  +--
++--

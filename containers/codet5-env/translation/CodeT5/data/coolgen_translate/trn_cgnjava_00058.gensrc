@@ -1,0 +1,5 @@
++->IF loc_error isc1_component return_code < loc dont_change_return_codes 1_ok
+!  USE cyyy9831_mv_sc1_to_yy1
+!     WHICH IMPORTS: Work View loc_error isc1_component TO Work View imp_error isc1_component
+!     WHICH EXPORTS: Work View exp_error iyy1_component FROM Work View exp_error iyy1_component
++--

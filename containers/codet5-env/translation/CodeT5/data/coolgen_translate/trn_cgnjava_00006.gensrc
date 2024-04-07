@@ -1,0 +1,4 @@
+USE cyyy9041_excptn_msg_fmt_as_str
+   WHICH IMPORTS: Work View loc_imp_error iyy1_component TO Work View imp_error iyy1_component
+   WHICH EXPORTS: Work View loc_error_msg iyy1_component FROM Work View exp_error_msg iyy1_component
+                  Work View loc_error iyy1_component FROM Work View exp_error iyy1_component
