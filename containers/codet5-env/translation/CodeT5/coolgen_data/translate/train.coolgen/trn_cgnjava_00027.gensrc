@@ -1,0 +1,11 @@
+       +->   CYY1S011_TRAIN003       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    27 !  USE isc1z021_o_authorization_check_s
+    27 !     WHICH IMPORTS: Entity View imp isc1_authorization_info TO Entity View imp isc1_authorization_info
+    27 !                    Group View  imp_group_trans TO Group View imp_group_trans
+    27 !     WHICH EXPORTS: Entity View exp isc1_authorization_info FROM Entity View exp isc1_authorization_info
+    27 !                    Work View loc_error isc1_component FROM Work View exp_error isc1_component
+       !
+       +---

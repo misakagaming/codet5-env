@@ -1,2 +1,0 @@
-USE cyyy9001_exception_hndlng_dflt
-   WHICH EXPORTS: Work View exp_error iyy1_component FROM Work View exp_error iyy1_component

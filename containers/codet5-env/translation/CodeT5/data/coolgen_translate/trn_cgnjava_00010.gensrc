@@ -1,4 +1,0 @@
-+->IF loc_imp_error iyy1_component return_code < loc dont_change_return_codes 1_ok
-!  SET loc_imp_error iyy1_component severity_code TO "E"
-!  SET loc_error_msg iyy1_component severity_code TO loc_imp_error iyy1_component severity_code
-+--

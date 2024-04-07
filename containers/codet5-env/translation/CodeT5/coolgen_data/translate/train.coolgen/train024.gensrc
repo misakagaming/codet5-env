@@ -1,0 +1,9 @@
+       +->   CYY1S011_TRAIN004       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    46 !  +->IF loc_error iyy1_component return_code < loc dont_change_return_codes 1_ok
+    49 !  !  MOVE loc_error iyy1_component TO loc_imp_error iyy1_component
+    46 !  +--
+       !
+       +---

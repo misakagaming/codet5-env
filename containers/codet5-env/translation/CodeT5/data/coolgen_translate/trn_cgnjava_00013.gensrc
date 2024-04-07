@@ -1,9 +1,0 @@
-+->IF exp_error iyy1_component return_code < loc dont_change_return_codes 1_ok
-!
-!  EXIT STATE IS std_return_rb WITH ROLLBACK
-!
-+> ELSE
-!
-!  EXIT STATE IS std_return
-!
- +--

@@ -1,0 +1,19 @@
+       +->   DYYY0211_TRAIN012       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    18 !  +->CREATE child
+    19 !  !  SET cinstance_id TO imp child cinstance_id
+    20 !  !  SET creference_id TO imp_reference iyy1_server_data reference_id
+    21 !  !  SET ccreate_user_id TO imp_reference iyy1_server_data userid
+    22 !  !  SET cupdate_user_id TO imp_reference iyy1_server_data userid
+    23 !  !  SET cparent_pkey_attr_text TO imp child cparent_pkey_attr_text
+    18 !  +> WHEN successful
+    27 !  !  MOVE  child TO exp child
+    18 !  +> WHEN already exists
+    28 !  !  SET exp_error iyy1_component return_code TO loc dont_change_return_codes n40_obj_create_failed
+    18 !  +> WHEN permitted value violation
+    30 !  !  SET exp_error iyy1_component return_code TO loc dont_change_return_codes n40_obj_create_failed
+    18 !  +--
+       !
+       +---

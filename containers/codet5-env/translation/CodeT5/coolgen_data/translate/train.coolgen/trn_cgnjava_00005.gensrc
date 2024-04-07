@@ -1,0 +1,7 @@
+       +->   CYY1S011_TRAIN002       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    15 !  SET loc_imp_error iyy1_component dialect_cd TO imp_dialect iyy1_component dialect_cd
+       !
+       +---

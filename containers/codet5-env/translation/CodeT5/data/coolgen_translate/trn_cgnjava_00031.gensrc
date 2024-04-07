@@ -1,5 +1,0 @@
-USE cyy1a121_server_termination
-   WHICH IMPORTS: Work View exp_error iyy1_component TO Work View imp_error iyy1_component
-                  Work View imp_dialect iyy1_component TO Work View imp_dialect iyy1_component
-   WHICH EXPORTS: Work View exp_msg iyy1_component FROM Work View exp_error_msg iyy1_component
-                  Work View exp_error iyy1_component FROM Work View exp_error iyy1_component

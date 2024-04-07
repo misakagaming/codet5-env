@@ -1,0 +1,10 @@
+       +->   CYY1S011_TRAIN003       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    27 !  USE cyyy9041_excptn_msg_fmt_as_str
+    27 !     WHICH IMPORTS: Work View loc_imp_error iyy1_component TO Work View imp_error iyy1_component
+    27 !     WHICH EXPORTS: Work View loc_error_msg iyy1_component FROM Work View exp_error_msg iyy1_component
+    27 !                    Work View loc_error iyy1_component FROM Work View exp_error iyy1_component
+       !
+       +---

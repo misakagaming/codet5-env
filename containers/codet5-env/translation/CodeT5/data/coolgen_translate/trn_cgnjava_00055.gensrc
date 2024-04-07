@@ -1,2 +1,0 @@
-USE cyy1a131_server_init
-   WHICH EXPORTS: Work View loc_reference iyy1_server_data FROM Work View exp_reference iyy1_server_data

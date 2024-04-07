@@ -1,4 +1,0 @@
-USE isc1z021_o_authorization_check_s
-   WHICH IMPORTS: Entity View imp isc1_authorization_info TO Entity View imp isc1_authorization_info
-   WHICH EXPORTS: Work View loc_error isc1_component FROM Work View exp_error isc1_component
-                  Entity View exp isc1_authorization_info FROM Entity View exp isc1_authorization_info

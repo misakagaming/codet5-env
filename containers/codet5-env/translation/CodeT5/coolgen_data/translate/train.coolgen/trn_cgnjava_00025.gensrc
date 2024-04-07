@@ -1,0 +1,10 @@
+       +->   CYY1S011_TRAIN003       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    27 !  USE cyy1a131_server_init
+    27 !     WHICH EXPORTS: Work View loc_reference iyy1_server_data FROM Work View exp_reference iyy1_server_data
+       !
+       +---
+
+   

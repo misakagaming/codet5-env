@@ -1,0 +1,11 @@
+       +->   CYYY0351_TRAIN017       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    93 !  +=>REPEAT
+    94 !  !  SET SUBSCRIPT OF exp_group_list TO SUBSCRIPT OF exp_group_list + 1
+    95 !  !  MOVE loc_g_list type TO exp_g_list type
+    99 !  !  SET loc_read_lb iyy1_supplied total_integer TO loc_read_lb iyy1_supplied total_integer - 1
+    93 !  +--UNTIL loc_read_lb iyy1_supplied total_integer = 0
+       !
+       +---

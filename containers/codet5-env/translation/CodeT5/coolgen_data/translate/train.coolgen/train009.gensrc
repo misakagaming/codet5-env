@@ -1,0 +1,22 @@
+       +->   DYYY0151_TRAIN009       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    28 !  +=>READ EACH (Optimize 1, Isolation UR) parent
+    28 !  !        SORTED BY DESCENDING parent pkey_attr_text
+    28 !  !        WHERE DESIRED parent pkey_attr_text <= imp_from parent pkey_attr_text
+    28 !  !              AND  DESIRED parent pkey_attr_text >= imp_filter_start parent pkey_attr_text
+    29 !  !  +->IF SUBSCRIPT OF exp_group_list < imp_filter iyy1_list scroll_amount
+    30 !  !  !  +->IF loc_filter iyy1_list scroll_type = "S"
+    31 !  !  !  !  SET loc_filter iyy1_list scroll_type TO SPACES
+    30 !  !  !  +> ELSE
+    32 !  !  !  !  SET SUBSCRIPT OF exp_group_list TO SUBSCRIPT OF exp_group_list + 1
+    33 !  !  !  !  MOVE  parent TO exp_g_list parent
+    30 !  !  !  +--
+    29 !  !  +> ELSE
+    34 !  !  !  SET exp_error iyy1_component reason_code TO loc dont_change_reason_codes 11_list_full
+    35 ! <------ESCAPE
+    29 !  !  +--
+    28 !  +--
+       !
+       +---

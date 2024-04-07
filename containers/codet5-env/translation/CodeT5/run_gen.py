@@ -46,6 +46,32 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
 logger = logging.getLogger(__name__)
 
 
+def read_folder_examples(srclang, srcext, trgext, filename):
+    """Read examples from filename."""
+    examples=[]
+    source,target=filename.split(',')
+    
+    srcFold = Path(source)    
+    ## print('Source: ', source)
+    trgFold = Path(target)
+    ## print('Target: ', target)
+    if srcFold.is_dir() and trgFold.is_dir():     
+        for spath in srcFold.glob('**/*.'+srcext):
+            dname = spath.name[0:spath.name.index('.'+srcext)]+'.'+trgext
+            ## print('Java File: ', str(spath))
+            tpath = Path(target+'/'+dname)
+            ## print('Coolgen File: ', str(tpath))
+            if os.path.exists(tpath):
+                examples.append(
+                    Example(
+                        source=read_source(str(spath)),
+                        target=read_source(str(tpath)),
+                        lang=srclang
+                            ) 
+                    )
+                
+    return examples
+
 def eval_ppl_epoch(args, eval_data, eval_examples, model, tokenizer):
     eval_sampler = SequentialSampler(eval_data)
     eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size,

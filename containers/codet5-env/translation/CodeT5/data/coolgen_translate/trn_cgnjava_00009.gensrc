@@ -1,3 +1,0 @@
-+->IF loc_error_msg iyy1_component severity_code <= SPACES
-!  SET loc_error_msg iyy1_component severity_code TO loc_imp_error iyy1_component severity_code
-+--

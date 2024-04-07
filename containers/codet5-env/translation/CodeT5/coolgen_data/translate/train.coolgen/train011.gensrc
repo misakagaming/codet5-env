@@ -1,0 +1,20 @@
+       +->   DYYY0131_TRAIN011       07/05/2023  15:07
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    29 !  +->UPDATE parent
+    30 !  !  SET preference_id TO imp_reference iyy1_server_data reference_id
+    31 !  !  SET pupdate_user_id TO imp_reference iyy1_server_data userid
+    32 !  !  SET psearch_attr_text TO imp parent psearch_attr_text
+    33 !  !  SET pother_attr_text TO imp parent pother_attr_text
+    29 !  +> WHEN successful
+    35 !  !  MOVE  parent TO exp parent
+    29 !  +> WHEN not unique
+    36 !  !  SET exp_error iyy1_component return_code TO loc dont_change_return_codes n41_obj_update_failed
+    37 !  !  SET exp_error iyy1_component reason_code TO loc dont_change_reason_codes 102_parent_already_exist
+    29 !  +> WHEN permitted value violation
+    38 !  !  SET exp_error iyy1_component return_code TO loc dont_change_return_codes n41_obj_update_failed
+    39 !  !  SET exp_error iyy1_component reason_code TO loc dont_change_reason_codes 103_parent_attr_value_invalid
+    29 !  +--
+       !
+       +---

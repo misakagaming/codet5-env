@@ -1,1 +1,0 @@
-SET exp_reference iyy1_server_data server_date TO datetimestamp(exp_reference iyy1_server_data server_timestamp)

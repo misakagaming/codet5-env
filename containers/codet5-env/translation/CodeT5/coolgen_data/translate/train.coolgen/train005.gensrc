@@ -1,0 +1,13 @@
+       +->   CYY1S081_TRAIN005                07/05/2023  15:09
+       !
+       !     PROCEDURE STATEMENTS
+       !
+    45 !  +->CASE OF imp_command iyy1_component send_command
+    45 !  +> CASE "INIT"
+    45 !  +> CASE "LIST"
+    47 !  !  SET exp_error iyy1_component return_code TO loc dont_change_return_codes n1110_unauthorized_operation
+    45 !  +> OTHERWISE
+    53 !  !  SET SUBSCRIPT OF loc_group_context TO 3
+    45 !  +--
+       !
+       +---
