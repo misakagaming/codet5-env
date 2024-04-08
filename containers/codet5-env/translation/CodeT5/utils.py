@@ -17,8 +17,12 @@ def load_and_cache_gen_data(args, filename, pool, tokenizer, split_tag, only_src
     # return: examples (Example object), data (TensorDataset)
     data_tag = '_all' if args.data_num == -1 else '_%d' % args.data_num
     cache_fn = '{}/{}.pt'.format(args.cache_path, split_tag + ('_src' if only_src else '') + data_tag)
-
-    examples = read_examples(filename, args.data_num, args.task)
+    trainRep = args.train_directories
+    examples = None
+    if trainRep is not None:
+        pass
+    else
+        examples = read_examples(filename, args.data_num, args.task)
 
     if is_sample:
         examples = random.sample(examples, min(5000, len(examples)))

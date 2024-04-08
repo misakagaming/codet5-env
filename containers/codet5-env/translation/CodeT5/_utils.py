@@ -1,5 +1,5 @@
 import json
-
+from pathlib import Path
 
 def add_lang_by_task(target_str, task, sub_task):
     if task == 'summarize':
@@ -162,6 +162,32 @@ class CloneExample(object):
         self.url1 = url1
         self.url2 = url2
 
+
+def read_folder_examples(srclang, srcext, trgext, filename):
+    """Read examples from filename."""
+    examples=[]
+    source,target=filename.split(',')
+    
+    srcFold = Path(source)    
+    ## print('Source: ', source)
+    trgFold = Path(target)
+    ## print('Target: ', target)
+    if srcFold.is_dir() and trgFold.is_dir():     
+        for spath in srcFold.glob('**/*.'+srcext):
+            dname = spath.name[0:spath.name.index('.'+srcext)]+'.'+trgext
+            ## print('Java File: ', str(spath))
+            tpath = Path(target+'/'+dname)
+            ## print('Coolgen File: ', str(tpath))
+            if os.path.exists(tpath):
+                examples.append(
+                    Example(
+                        source=read_source(str(spath)),
+                        target=read_source(str(tpath)),
+                        lang=srclang
+                            ) 
+                    )
+                
+    return examples
 
 def read_translate_examples(filename, data_num):
     """Read examples from filename."""

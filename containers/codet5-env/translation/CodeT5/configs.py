@@ -39,10 +39,21 @@ def add_args(parser):
     ## Other parameters
     parser.add_argument("--train_filename", default=None, type=str,
                         help="The train filename. Should contain the .jsonl files for this task.")
+    parser.add_argument("--train_directories", default=None, type=str, 
+                        help="The train directories. Should contain the source and target language files.")
     parser.add_argument("--dev_filename", default=None, type=str,
                         help="The dev filename. Should contain the .jsonl files for this task.")
+    parser.add_argument("--dev_directories", default=None, type=str, 
+                        help="The dev directories. Should contain files for this training evaluation task.")
     parser.add_argument("--test_filename", default=None, type=str,
                         help="The test filename. Should contain the .jsonl files for this task.")
+    parser.add_argument("--test_directories", default=None, type=str, 
+                        help="The test directories. Should contain files for testing.")
+                        
+    parser.add_argument("--source_ext", default='gensrc', type=str, 
+                        help="The source language file extension")  
+    parser.add_argument("--target_ext", default='java', type=str, 
+                        help="The target language file extension")
 
     parser.add_argument("--config_name", default="", type=str,
                         help="Pretrained config name or path if not the same as model_name")
