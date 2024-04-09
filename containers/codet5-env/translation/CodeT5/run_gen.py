@@ -375,10 +375,10 @@ def main():
             result_str = "[%s] bleu-4: %.2f, em: %.4f, codebleu: %.4f\n" % (criteria, test_bleu, test_em, test_codebleu)
             logger.info(result_str)
             fa.write(result_str)
-            if args.res_fn:
-                with open(os.path.join(args.output_dir, args.res_fn), 'a+') as f:
-                    f.write('[Time: {}] {}\n'.format(get_elapse_time(t0), file))
-                    f.write(result_str)
+            #if args.res_fn:
+            #    with open(os.path.join(args.output_dir, args.res_fn), 'a+') as f:
+            #        f.write('[Time: {}] {}\n'.format(get_elapse_time(t0), file))
+            #        f.write(result_str)
     logger.info("Finish and take {}".format(get_elapse_time(t0)))
     fa.write("Finish and take {}".format(get_elapse_time(t0)))
     fa.close()
