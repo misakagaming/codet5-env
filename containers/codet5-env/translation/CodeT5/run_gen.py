@@ -376,7 +376,7 @@ def main():
             logger.info(result_str)
             fa.write(result_str)
             if args.res_fn:
-                with open(args.res_fn, 'a+') as f:
+                with open(os.path.join(args.output_dir, args.res_fn), 'a+') as f:
                     f.write('[Time: {}] {}\n'.format(get_elapse_time(t0), file))
                     f.write(result_str)
     logger.info("Finish and take {}".format(get_elapse_time(t0)))
