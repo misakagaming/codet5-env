@@ -21,7 +21,7 @@ def load_and_cache_gen_data(args, filename, pool, tokenizer, split_tag, only_src
     examples = None
     if trainRep is not None:
         pass
-    else
+    else:
         examples = read_examples(filename, args.data_num, args.task)
 
     if is_sample:
