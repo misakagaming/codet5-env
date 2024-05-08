@@ -40,6 +40,7 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 #    conda clean -tipy
 
 COPY translation .
+COPY CodeT5+ .
 
 
 COPY entrypoint.sh /entrypoint.sh

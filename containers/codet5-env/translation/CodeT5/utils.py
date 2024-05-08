@@ -22,7 +22,7 @@ def load_and_cache_gen_data(args, filename, pool, tokenizer, split_tag, only_src
     if trainRep is not None:
         pass
     else:
-        examples = read_examples(filename, args.data_num, args.task)
+        examples = read_examples(args.source_lang, filename, args.data_num, args.task)
 
     if is_sample:
         examples = random.sample(examples, min(5000, len(examples)))

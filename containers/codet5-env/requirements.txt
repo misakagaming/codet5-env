@@ -4,3 +4,5 @@ torchaudio
 transformers>=4.6.1
 tree_sitter>=0.2.2
 tensorboard>=2.4.1
+datasets
+evaluate
