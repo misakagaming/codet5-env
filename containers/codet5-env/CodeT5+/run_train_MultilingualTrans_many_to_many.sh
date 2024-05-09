@@ -17,7 +17,7 @@ run() {
 
     #   train and predict model
     PORT_ID=$(expr $RANDOM + 1000)
-
+	echo "test1"
     CUDA_VISIBLE_DEVICES=$GPUID python -m torch.distributed.launch --nproc_per_node 4 --master_port ${PORT_ID} \
       run_translation.py \
       --model_name_or_path ./pretrain/codet5p-220m \
@@ -52,7 +52,7 @@ run() {
       --fp16 \
       --warmup_steps 200 \
       --report_to tensorboard 2>&1 | tee ${OUTPUT_DIR}/log_train.txt
-
+	echo "test2"
     #calculate score
     echo ${source_names}_to_${target_names}
     python run_score.py --input_file ${OUTPUT_DIR}/generated_predictions.json \
@@ -73,6 +73,7 @@ run() {
         fi
       done
     done
+	echo "test3"
   done
 
 }
