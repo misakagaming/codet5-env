@@ -18,8 +18,7 @@ from fractions import Fraction
 import warnings
 from collections import Counter
 
-from evaluator.CodeBLEU.utils import ngrams
-import pdb
+from .utils import ngrams
 
 
 def sentence_bleu(
