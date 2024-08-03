@@ -7,3 +7,4 @@ tree_sitter==0.20.1
 tensorboard>=2.4.1
 datasets
 evaluate
+numpy<2.0
