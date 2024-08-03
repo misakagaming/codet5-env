@@ -1,9 +1,0 @@
-       +->   CYY1S011_TRAIN023       07/05/2023  15:07
-       !
-       !     PROCEDURE STATEMENTS
-       !
-    27 !  USE cyyy9051_cmpnt_identifiers_get
-    27 !     WHICH EXPORTS: Work View loc_imp_error iyy1_component FROM Work View exp_identifiers iyy1_component
-    27 !                    Work View loc_error iyy1_component FROM Work View exp_error iyy1_component
-       !
-       +---

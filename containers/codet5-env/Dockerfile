@@ -39,7 +39,6 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 #RUN conda env update -f environment-complex.yml &&\
 #    conda clean -tipy
 
-COPY translation .
 COPY CodeT5+ .
 
 

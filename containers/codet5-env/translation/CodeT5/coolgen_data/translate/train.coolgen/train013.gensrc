@@ -1,9 +1,0 @@
-       +->   CYY1S011_D004_TRAIN013       07/05/2023  15:07
-       !
-       !     PROCEDURE STATEMENTS
-       !
-    46 !  +->IF exp isc1_authorization_info authority_ind = 4
-    49 !  !  SET SUBSCRIPT OF loc_group_context TO 3
-    46 !  +--
-       !
-       +---

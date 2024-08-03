@@ -1,7 +1,0 @@
-       +->   CYY1S011_TRAIN002       07/05/2023  15:07
-       !
-       !     PROCEDURE STATEMENTS
-       !
-    15 !  MOVE loc_error_msg iyy1_component TO exp_error_msg iyy1_component
-       !
-       +---

@@ -1,7 +1,0 @@
-       +->   CYY1S081_TRAIN006                07/05/2023  15:09
-       !
-       !     PROCEDURE STATEMENTS
-       !
-    31 !  MOVE loc_reference iyy1_server_data TO exp_reference iyy1_server_data
-       !
-       +---
