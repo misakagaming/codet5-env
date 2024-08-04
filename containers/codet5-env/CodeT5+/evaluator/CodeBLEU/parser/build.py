@@ -15,6 +15,8 @@ Language.build_library(
     'tree-sitter-haskell',
     'tree-sitter-cobol',
     'tree-sitter-fortran',
+    'tree-sitter-ruby',
+    'tree-sitter-perl',
     'tree-sitter-coolgen'
   ]
 )
