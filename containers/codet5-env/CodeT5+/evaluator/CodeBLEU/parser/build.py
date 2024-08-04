@@ -13,6 +13,8 @@ Language.build_library(
     'tree-sitter-java',
     'tree-sitter-c-sharp',
     'tree-sitter-haskell',
+    'tree-sitter-cobol',
+    'tree-sitter-fortran'
     'tree-sitter-coolgen'
   ]
 )
