@@ -14,7 +14,7 @@ Language.build_library(
     'tree-sitter-c-sharp',
     'tree-sitter-haskell',
     'tree-sitter-cobol',
-    'tree-sitter-fortran'
+    'tree-sitter-fortran',
     'tree-sitter-coolgen'
   ]
 )
