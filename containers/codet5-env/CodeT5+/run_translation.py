@@ -645,9 +645,6 @@ def main():
         predict_results = trainer.predict(
             predict_dataset, metric_key_prefix="predict", max_length=max_length, num_beams=num_beams
         )
-        for i in range(3):
-            print(predict_dataset[i])
-            print(predict_results[i])
         metrics = predict_results.metrics
         max_predict_samples = (
             data_args.max_predict_samples if data_args.max_predict_samples is not None else len(predict_dataset)
@@ -664,6 +661,9 @@ def main():
                 )
                 predictions = [pred.strip() for pred in predictions]
                 print('predictions', len(predictions))
+                for i in range(3):
+                    print(raw_datasets["test"][i])
+                    print(predictions[i])
                 import json
                 output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions.json")
                 with open(output_prediction_file, "w") as writer:
@@ -672,6 +672,8 @@ def main():
                         if idx >= max_predict_samples:
                             break
                         # print(data)
+                        print(raw_datasets["test"][idx])
+                        print(predictions[idx])
                         json_data = data.copy()
                         json_data['prediction'] = predictions[idx]
                         string_data = json.dumps(json_data)
