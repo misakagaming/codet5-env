@@ -645,6 +645,9 @@ def main():
         predict_results = trainer.predict(
             predict_dataset, metric_key_prefix="predict", max_length=max_length, num_beams=num_beams
         )
+        for i in range(3):
+            print(predict_dataset[i])
+            print(predict_results[i])
         metrics = predict_results.metrics
         max_predict_samples = (
             data_args.max_predict_samples if data_args.max_predict_samples is not None else len(predict_dataset)
