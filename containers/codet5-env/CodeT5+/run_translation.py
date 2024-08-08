@@ -672,8 +672,6 @@ def main():
                         if idx >= max_predict_samples:
                             break
                         # print(data)
-                        print(raw_datasets["test"][idx])
-                        print(predictions[idx])
                         json_data = data.copy()
                         json_data['prediction'] = predictions[idx]
                         string_data = json.dumps(json_data)
