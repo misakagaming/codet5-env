@@ -11,20 +11,8 @@ env:
   IMAGE_NAME: misakagaming/codet5-env
   VERSION: latest
 
-jobs:
-
-  foo:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Delete huge unnecessary tools folder
-        run: rm -rf /opt/hostedtoolcache
-
-      - uses: actions/checkout@v3
-
-      - name: Run foo
-        uses: docker://foo-image
-        with: 
-          args: /foo-script
+jobs:      
+          
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
@@ -32,6 +20,8 @@ jobs:
       packages: write
 
     steps:
+      - name: Delete huge unnecessary tools folder
+        run: rm -rf /opt/hostedtoolcache
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Set up Docker Buildx
