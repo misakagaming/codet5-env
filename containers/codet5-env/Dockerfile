@@ -40,7 +40,7 @@ RUN /opt/python3/venv/base/bin/python3 -m pip install --no-cache-dir -r /opt/pyt
 #    conda clean -tipy
 
 COPY CodeT5+ .
-COPY CodeT5 .
+COPY codet5_base .
 
 
 COPY entrypoint.sh /entrypoint.sh
