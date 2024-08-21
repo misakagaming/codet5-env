@@ -131,18 +131,20 @@ def eval_bleu_epoch(args, eval_data, eval_examples, model, tokenizer, split_tag,
             logger.info("Save the predictions into %s", output_fn)
     else:
         dev_accs, predictions = [], []
-        count = 1
+        count = 5
         with open(output_fn, 'w') as f, open(gold_fn, 'w') as f1, open(src_fn, 'w') as f2:
             for pred_nl, gold in zip(pred_nls, eval_examples):
                 dev_accs.append(pred_nl.strip() == gold.target.strip())
-                if count == 1:
+                if args.task in ['summarize']:
+                    # for smooth-bleu4 evaluation
+                    if count > 0:
                     print("gold source: \n")
                     print(gold.source)
                     print("gold target: \n")
                     print(gold.target)
+                    print("prediction: \n")
+                    print(pred_nl)
                     count -= 1
-                if args.task in ['summarize']:
-                    # for smooth-bleu4 evaluation
                     predictions.append(str(gold.idx) + '\t' + pred_nl)
                     f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
                     f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
@@ -376,12 +378,6 @@ def main():
             eval_examples, eval_data = load_and_cache_gen_data(args, args.test_filename, pool, tokenizer, 'test',
                                                                only_src=True, is_sample=False)
             result = eval_bleu_epoch(args, eval_data, eval_examples, model, tokenizer, 'test', criteria)
-            print("examples source: \n")
-            print(eval_examples[0].source)
-            print("examples target: \n")
-            print(eval_examples[0].target)
-            print("data: \n")
-            print(eval_data[0])
             print("result: \n")
             print(result)
             test_bleu, test_em = result['bleu'], result['em']
