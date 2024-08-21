@@ -138,13 +138,13 @@ def eval_bleu_epoch(args, eval_data, eval_examples, model, tokenizer, split_tag,
                 if args.task in ['summarize']:
                     # for smooth-bleu4 evaluation
                     if count > 0:
-                    print("gold source: \n")
-                    print(gold.source)
-                    print("gold target: \n")
-                    print(gold.target)
-                    print("prediction: \n")
-                    print(pred_nl)
-                    count -= 1
+                        print("gold source: \n")
+                        print(gold.source)
+                        print("gold target: \n")
+                        print(gold.target)
+                        print("prediction: \n")
+                        print(pred_nl)
+                        count -= 1
                     predictions.append(str(gold.idx) + '\t' + pred_nl)
                     f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
                     f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
