@@ -662,7 +662,7 @@ def main():
                 )
                 predictions = [pred.strip() for pred in predictions]
                 print('predictions', len(predictions))
-                if args.summary_column == "name":
+                if summary_column == "name":
                     for i in range(10):
                     
                         print("source: ")
