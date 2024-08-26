@@ -662,21 +662,9 @@ def main():
                 )
                 predictions = [pred.strip() for pred in predictions]
                 print('predictions', len(predictions))
-                if args.summary_column == "name":
-                    for i in range(10):
-                    
-                        print("source: ")
-                        print(raw_datasets["test"][i]["source"])
-                        print("target: ")
-                        print(raw_datasets["test"][i]["name"])
-                        print("prediction: ")
-                        print(predictions[i])
-                else:
-                    for i in range(10):
-                        print("source: ")
-                        print(raw_datasets["test"][i])
-                        print("prediction: ")
-                        print(predictions[i])
+                for i in range(3):
+                    print(raw_datasets["test"][i])
+                    print(predictions[i])
                 import json
                 output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions.json")
                 with open(output_prediction_file, "w") as writer:
