@@ -41,6 +41,7 @@ def main():
                         help="target_names")
     parser.add_argument('--codebleu', action='store_true')
     parser.add_argument('--naive', action='store_true')
+    parser.add_argument('--name', action='store_true')
     args = parser.parse_args()
     dev_accs = []
     hypothesis = []
@@ -56,10 +57,15 @@ def main():
                 if args.naive:
                     dev_accs.append(source_code.strip() == json_data['target'].strip())
                     hypothesis.append(source_code.strip())
+                    pre_references.append(json_data['target'].strip())
+                if args.name:
+                    dev_accs.append(json_data['prediction'].strip() == json_data['name'].strip())
+                    hypothesis.append(json_data['prediction'].strip())
+                    pre_references.append(json_data['name'].strip())
                 else:
                     dev_accs.append(json_data['prediction'].strip() == json_data['target'].strip())
                     hypothesis.append(json_data['prediction'].strip())
-                pre_references.append(json_data['target'].strip())
+                    pre_references.append(json_data['target'].strip())
 
     pre_references = [pre_references]
     bleu = round(_bleu_json_select(args.input_file, args, args.naive), 2)
