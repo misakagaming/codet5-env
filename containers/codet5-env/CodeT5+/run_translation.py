@@ -671,6 +671,8 @@ def main():
                         print(raw_datasets["test"][i]["name"])
                         print("prediction: ")
                         print(predictions[i])
+                        print("target code: ")
+                        print(raw_datasets["test"][i]["target"])
                 else:
                     for i in range(10):
                         print("source: ")
