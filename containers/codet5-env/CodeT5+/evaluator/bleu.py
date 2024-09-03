@@ -170,3 +170,26 @@ def _bleu_json_select(json_file, args, naive=None):
                     translations.append(json_data['prediction'].strip().split())
     bleu_score, _, _, _, _, _ = compute_bleu(per_segment_references, translations, max_order, smooth)
     return round(100 * bleu_score,2)
+    
+def _bleu_json_summ_select(json_file, args, naive=None):
+    max_order = 4
+    smooth = True
+    per_segment_references = []
+    translations = []
+    with open(json_file, 'r') as f:
+        for json_string in f:
+            json_data = json.loads(json_string)
+            matches = re.search(r"Translate (\S+) to (\S+): ", json_data['source'])
+            # print(json_string)
+            source_name = matches.groups()[0]
+            target_name = matches.groups()[1]
+            source_code = re.sub(r"^Translate (\S+) to (\S+): ", "", json_data['source'])
+            # print(source_name, target_name)
+            if source_name in args.source_names.split(',') and target_name in args.target_names.split(','):
+                per_segment_references.append([json_data['name'].strip().split()])
+                if naive:
+                    translations.append(source_code.strip().split())
+                else:
+                    translations.append(json_data['prediction'].strip().split())
+    bleu_score, _, _, _, _, _ = compute_bleu(per_segment_references, translations, max_order, smooth)
+    return round(100 * bleu_score,2)

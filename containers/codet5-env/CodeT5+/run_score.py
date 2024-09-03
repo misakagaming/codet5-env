@@ -24,7 +24,7 @@ import json
 import re
 
 from evaluator.CodeBLEU import calc_code_bleu
-from evaluator.bleu import _bleu, _bleu_json, _bleu_json_select
+from evaluator.bleu import _bleu, _bleu_json, _bleu_json_select, _bleu_json_summ_select
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
@@ -68,7 +68,10 @@ def main():
                     pre_references.append(json_data['target'].strip())
 
     pre_references = [pre_references]
-    bleu = round(_bleu_json_select(args.input_file, args, args.naive), 2)
+    if args.name:
+        bleu = round(_bleu_json_summ_select(args.input_file, args, args.naive), 2)
+    else:
+        bleu = round(_bleu_json_select(args.input_file, args, args.naive), 2)
     if args.codebleu:
         codebleu = calc_code_bleu.get_codebleu_list(pre_references, hypothesis, 'python')
         result = {'em': round(np.mean(dev_accs) * 100, 2), 'bleu': bleu, 'codebleu': round(codebleu * 100, 2)}
