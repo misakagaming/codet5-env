@@ -9,14 +9,8 @@ Language.build_library(
 
   # Include one or more languages
   [
-    'tree-sitter-python',
     'tree-sitter-java',
     'tree-sitter-c-sharp',
-    'tree-sitter-haskell',
-    'tree-sitter-cobol',
-    'tree-sitter-fortran',
-    'tree-sitter-ruby',
-    'tree-sitter-swift',
     'tree-sitter-coolgen'
   ]
 )
